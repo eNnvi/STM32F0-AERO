@@ -13,14 +13,15 @@
 
 sens_common sensor;
 
+// GYROSCOPE
 gyro::gyro() {
 	address = (GYRO_ADD & 0x7F) << 1;
 	x = y = z = 0;
 	// setting up ITG
 	// 8KHz sampling, no full scale
-	sensor.writeDevice(address, DLPF_FS, 0x00);
+	sensor.writeDevice(address, GYRO_DLPF_FS, 0x00);
 	// 400 Hz sampling rate
-	sensor.writeDevice(address, SMPLRT_DVI, 19);
+	sensor.writeDevice(address, GYRO_SMPLRT_DVI, 19);
 }
 
 void gyro::update() {
@@ -29,7 +30,43 @@ void gyro::update() {
 	z = GYRO_Z_SYM sensor.readDevice(address, GYRO_ZOUT_H);
 }
 
+// MAGNETOMETER
+mag::mag() {
+	address = (MAG_ADD & 0x7F) << 1;
+	x = y = z = 0;
+	// setting up...
+	// 8KHz sampling, no full scale
+	//sensor.writeDevice(address, DLPF_FS, 0x00);
+	// 400 Hz sampling rate
+	//sensor.writeDevice(address, SMPLRT_DVI, 19);
+}
 
+void mag::update() {
+	x = MAG_X_SYM sensor.readDevice(address, MAG_XOUT_H);
+	y = MAG_Y_SYM sensor.readDevice(address, MAG_YOUT_H);
+	z = MAG_Z_SYM sensor.readDevice(address, MAG_ZOUT_H);
+}
+
+
+// ACCELEROMETER
+acc::acc() {
+	address = (ACC_ADD & 0x7F) << 1;
+	x = y = z = 0;
+
+	sensor.writeDevice(address, ACC_POWER_CTL, ACC_POWER_MEAS);
+	sensor.writeDevice(address, ACC_DATA_FORMAT, ACC_FULL_RANGE | ACC_RANGE_8G);
+	sensor.writeDevice(address, ACC_BW_RATE, ACC_RATE_400);
+	sensor.writeDevice(address, ACC_FIFO_CTL, 0x10 | ACC_FIFO_STREAM);
+
+}
+
+void acc::update() {
+	x = ACC_X_SYM sensor.readDevice(address, ACC_XOUT_H);
+	y = ACC_Y_SYM sensor.readDevice(address, ACC_YOUT_H);
+	z = ACC_Z_SYM sensor.readDevice(address, ACC_ZOUT_H);
+}
+
+// COMMON FOR SENSORS (I2C COMM)
 void sens_common::writeDevice(uint8_t address, uint8_t registerAddress, uint8_t data){
 	while(I2C_GetFlagStatus(I2C2, I2C_ISR_BUSY) != RESET); // check no trasmission in progress
 	I2C_GenerateSTART(I2C2, ENABLE); // generate start
@@ -70,37 +107,4 @@ uint16_t sens_common::readDevice(uint8_t address, uint8_t registerAddress){
 
     return data;
 
-}
-
-
-mag::mag() {
-	address = (GYRO_ADD & 0x7F) << 1;
-	x = y = z = 0;
-	// setting up ITG
-	// 8KHz sampling, no full scale
-	sensor.writeDevice(address, DLPF_FS, 0x00);
-	// 400 Hz sampling rate
-	sensor.writeDevice(address, SMPLRT_DVI, 19);
-}
-
-void mag::update() {
-	x = GYRO_X_SYM sensor.readDevice(address, GYRO_XOUT_H);
-	y = GYRO_Y_SYM sensor.readDevice(address, GYRO_YOUT_H);
-	z = GYRO_Z_SYM sensor.readDevice(address, GYRO_ZOUT_H);
-}
-
-acc::acc() {
-	address = (GYRO_ADD & 0x7F) << 1;
-	x = y = z = 0;
-	// setting up ITG
-	// 8KHz sampling, no full scale
-	sensor.writeDevice(address, DLPF_FS, 0x00);
-	// 400 Hz sampling rate
-	sensor.writeDevice(address, SMPLRT_DVI, 19);
-}
-
-void acc::update() {
-	x = GYRO_X_SYM sensor.readDevice(address, GYRO_XOUT_H);
-	y = GYRO_Y_SYM sensor.readDevice(address, GYRO_YOUT_H);
-	z = GYRO_Z_SYM sensor.readDevice(address, GYRO_ZOUT_H);
 }

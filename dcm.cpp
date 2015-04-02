@@ -13,29 +13,37 @@
 
 //---------------------------------------------------------------------------------------------------
 // Header files
-
-#include "dcm.h"
 #include <math.h>
+#include "stm32f0xx.h"
+#include "stm32f0xx_conf.h"
+
+#include "main.h"
+#include "settings.h"
+#include "gps.h"
+#include "dcm.h"
+#include "motors.h"
+#include "recv.h"
+#include "sensors.h"
 
 //---------------------------------------------------------------------------------------------------
 // Definitions
 
-#define sampleFreq	512.0f			// sample frequency in Hz
+#define sampleFreq	400.0f			// sample frequency in Hz
 #define twoKpDef	(2.0f * 0.5f)	// 2 * proportional gain
 #define twoKiDef	(2.0f * 0.0f)	// 2 * integral gain
 
 //---------------------------------------------------------------------------------------------------
 // Variable definitions
 
-volatile float twoKp = twoKpDef;											// 2 * proportional gain (Kp)
-volatile float twoKi = twoKiDef;											// 2 * integral gain (Ki)
-volatile float q0 = 1.0f, q1 = 0.0f, q2 = 0.0f, q3 = 0.0f;					// quaternion of sensor frame relative to auxiliary frame
-volatile float integralFBx = 0.0f,  integralFBy = 0.0f, integralFBz = 0.0f;	// integral error terms scaled by Ki
+volatile double twoKp = twoKpDef;											// 2 * proportional gain (Kp)
+volatile double twoKi = twoKiDef;											// 2 * integral gain (Ki)
+volatile double q0 = 1.0f, q1 = 0.0f, q2 = 0.0f, q3 = 0.0f;					// quaternion of sensor frame relative to auxiliary frame
+volatile double integralFBx = 0.0f,  integralFBy = 0.0f, integralFBz = 0.0f;	// integral error terms scaled by Ki
 
 //---------------------------------------------------------------------------------------------------
 // Function declarations
 
-float invSqrt(float x);
+double invSqrt(double x);
 
 //====================================================================================================
 // Functions
@@ -43,13 +51,13 @@ float invSqrt(float x);
 //---------------------------------------------------------------------------------------------------
 // AHRS algorithm update
 
-void MahonyAHRSupdate(float gx, float gy, float gz, float ax, float ay, float az, float mx, float my, float mz) {
-	float recipNorm;
-    float q0q0, q0q1, q0q2, q0q3, q1q1, q1q2, q1q3, q2q2, q2q3, q3q3;
-	float hx, hy, bx, bz;
-	float halfvx, halfvy, halfvz, halfwx, halfwy, halfwz;
-	float halfex, halfey, halfez;
-	float qa, qb, qc;
+void MahonyAHRSupdate(double gx, double gy, double gz, double ax, double ay, double az, double mx, double my, double mz) {
+	double recipNorm;
+    double q0q0, q0q1, q0q2, q0q3, q1q1, q1q2, q1q3, q2q2, q2q3, q3q3;
+	double hx, hy, bx, bz;
+	double halfvx, halfvy, halfvz, halfwx, halfwy, halfwz;
+	double halfex, halfey, halfez;
+	double qa, qb, qc;
 
 	// Use IMU algorithm if magnetometer measurement invalid (avoids NaN in magnetometer normalisation)
 	if((mx == 0.0f) && (my == 0.0f) && (mz == 0.0f)) {
@@ -147,11 +155,11 @@ void MahonyAHRSupdate(float gx, float gy, float gz, float ax, float ay, float az
 //---------------------------------------------------------------------------------------------------
 // IMU algorithm update
 
-void MahonyAHRSupdateIMU(float gx, float gy, float gz, float ax, float ay, float az) {
-	float recipNorm;
-	float halfvx, halfvy, halfvz;
-	float halfex, halfey, halfez;
-	float qa, qb, qc;
+void MahonyAHRSupdateIMU(double gx, double gy, double gz, double ax, double ay, double az) {
+	double recipNorm;
+	double halfvx, halfvy, halfvz;
+	double halfex, halfey, halfez;
+	double qa, qb, qc;
 
 	// Compute feedback only if accelerometer measurement valid (avoids NaN in accelerometer normalisation)
 	if(!((ax == 0.0f) && (ay == 0.0f) && (az == 0.0f))) {
@@ -217,12 +225,12 @@ void MahonyAHRSupdateIMU(float gx, float gy, float gz, float ax, float ay, float
 // Fast inverse square-root
 // See: http://en.wikipedia.org/wiki/Fast_inverse_square_root
 
-float invSqrt(float x) {
-	float halfx = 0.5f * x;
-	float y = x;
+double invSqrt(double x) {
+	double halfx = 0.5f * x;
+	double y = x;
 	long i = *(long*)&y;
 	i = 0x5f3759df - (i>>1);
-	y = *(float*)&i;
+	y = *(double*)&i;
 	y = y * (1.5f - (halfx * y * y));
 	return y;
 }

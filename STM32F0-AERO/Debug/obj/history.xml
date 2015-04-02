@@ -1,89 +1,89 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <history>
-   <processor signature="arm-none-eabi-gcc 4.8.1 mingw32 -mcpu=cortex-m0 -mthumb -Wall -ffunction-sections -g -O0 -c -DSTM32F051R8 -DSTM32F0XX_MD -DUSE_STDPERIPH_DRIVER -D__ASSEMBLY__ -I..\..\..\..\..\Projects\STM32\STM32F0-AERO\cmsis_boot -I..\..\..\..\..\Projects\STM32\STM32F0-AERO -I..\..\..\..\..\Projects\STM32\STM32F0-AERO\cmsis_core -I..\..\..\..\..\Projects -I..\..\..\..\..\Projects\STM32\STM32F0-AERO\stm32_lib -I..\..\..\..\..\Projects\STM32 -I..\..\..\..\..\Projects\STM32\STM32F0-AERO\stm32_lib\inc">
-      <target file="dcm.o" lastModified="14c7589f870">
-         <source file="..\..\..\dcm.cpp" lastModified="14c70072c8a"/>
+   <processor signature="arm-none-eabi-gcc 4.8.1 mingw32 -mcpu=cortex-m0 -mthumb -Wall -ffunction-sections -g -Os -c -DSTM32F051R8 -DSTM32F0XX_MD -DUSE_STDPERIPH_DRIVER -D__ASSEMBLY__ -DSUPPORT_CPLUSPLUS -I..\..\..\..\..\Projects\STM32\STM32F0-AERO\cmsis_boot -I..\..\..\..\..\Projects\STM32\STM32F0-AERO -I..\..\..\..\..\Projects\STM32\STM32F0-AERO\cmsis_core -I..\..\..\..\..\Projects -I..\..\..\..\..\Projects\STM32\STM32F0-AERO\stm32_lib -I..\..\..\..\..\Projects\STM32 -I..\..\..\..\..\Projects\STM32\STM32F0-AERO\stm32_lib\inc">
+      <target file="dcm.o" lastModified="14c79694c07">
+         <source file="..\..\..\dcm.cpp" lastModified="14c795d7e3b"/>
       </target>
-      <target file="stm32f0xx_wwdg.o" lastModified="14c7589fddf">
+      <target file="stm32f0xx_wwdg.o" lastModified="14c79695cf2">
          <source file="..\..\..\stm32_lib\src\stm32f0xx_wwdg.c" lastModified="14c758692c3"/>
       </target>
-      <target file="gps.o" lastModified="14c7589fc0c">
-         <source file="..\..\..\gps.cpp" lastModified="14c13227b62"/>
+      <target file="gps.o" lastModified="14c796956e7">
+         <source file="..\..\..\gps.cpp" lastModified="14c75ae5db4"/>
       </target>
-      <target file="stm32f0xx_rtc.o" lastModified="14c7589fae2">
+      <target file="stm32f0xx_rtc.o" lastModified="14c7969544e">
          <source file="..\..\..\stm32_lib\src\stm32f0xx_rtc.c" lastModified="14c7586a798"/>
       </target>
-      <target file="stm32f0xx_tim.o" lastModified="14c7589fcb1">
+      <target file="stm32f0xx_tim.o" lastModified="14c7969592a">
          <source file="..\..\..\stm32_lib\src\stm32f0xx_tim.c" lastModified="14c75869d70"/>
       </target>
-      <target file="stm32f0xx_adc.o" lastModified="14c7589f701">
+      <target file="stm32f0xx_adc.o" lastModified="14c79694a1e">
          <source file="..\..\..\stm32_lib\src\stm32f0xx_adc.c" lastModified="14c7586c9db"/>
       </target>
-      <target file="stm32f0xx_flash.o" lastModified="14c7589fd07">
+      <target file="stm32f0xx_flash.o" lastModified="14c79695a5c">
          <source file="..\..\..\stm32_lib\src\stm32f0xx_flash.c" lastModified="14c7586c957"/>
       </target>
-      <target file="stm32f0xx_dma.o" lastModified="14c7589f8e4">
+      <target file="stm32f0xx_dma.o" lastModified="14c79694dc3">
          <source file="..\..\..\stm32_lib\src\stm32f0xx_dma.c" lastModified="14c7586c986"/>
       </target>
-      <target file="motors.o" lastModified="14c7589fd3b">
-         <source file="..\..\..\motors.cpp" lastModified="14c007dae99"/>
+      <target file="motors.o" lastModified="14c79695afc">
+         <source file="..\..\..\motors.cpp" lastModified="14c7590f294"/>
       </target>
-      <target file="stm32f0xx_exti.o" lastModified="14c7589fd72">
-         <source file="..\..\..\stm32_lib\src\stm32f0xx_exti.c" lastModified="14c7586c96f"/>
-      </target>
-      <target file="system_stm32f0xx_temp.o" lastModified="14c7589f9fd">
+      <target file="system_stm32f0xx_temp.o" lastModified="14c79695147">
          <source file="..\..\..\cmsis_boot\system_stm32f0xx_temp.c" lastModified="14c7586953a"/>
       </target>
-      <target file="stm32f0xx_gpio.o" lastModified="14c7589fa3b">
+      <target file="stm32f0xx_exti.o" lastModified="14c79695b89">
+         <source file="..\..\..\stm32_lib\src\stm32f0xx_exti.c" lastModified="14c7586c96f"/>
+      </target>
+      <target file="stm32f0xx_gpio.o" lastModified="14c796951fa">
          <source file="..\..\..\stm32_lib\src\stm32f0xx_gpio.c" lastModified="14c758692de"/>
       </target>
-      <target file="stm32f0xx_comp.o" lastModified="14c7589fa72">
+      <target file="stm32f0xx_comp.o" lastModified="14c79695287">
          <source file="..\..\..\stm32_lib\src\stm32f0xx_comp.c" lastModified="14c7586c9c4"/>
       </target>
-      <target file="stm32f0xx_spi.o" lastModified="14c7589f936">
+      <target file="stm32f0xx_spi.o" lastModified="14c79694ecd">
          <source file="..\..\..\stm32_lib\src\stm32f0xx_spi.c" lastModified="14c75869dbe"/>
       </target>
-      <target file="stm32f0xx_syscfg.o" lastModified="14c7589fe19">
+      <target file="stm32f0xx_syscfg.o" lastModified="14c79695d7c">
          <source file="..\..\..\stm32_lib\src\stm32f0xx_syscfg.c" lastModified="14c75869d9e"/>
       </target>
-      <target file="sensors.o" lastModified="14c7589fda9">
-         <source file="..\..\..\sensors.cpp" lastModified="14c74ba424e"/>
+      <target file="recv.o" lastModified="14c796950b9">
+         <source file="..\..\..\recv.cpp" lastModified="14c75d811a5"/>
       </target>
-      <target file="stm32f0xx_crc.o" lastModified="14c7589f65e">
+      <target file="stm32f0xx_crc.o" lastModified="14c796947fb">
          <source file="..\..\..\stm32_lib\src\stm32f0xx_crc.c" lastModified="14c7586c99f"/>
       </target>
-      <target file="recv.o" lastModified="14c7589f9c7">
-         <source file="..\..\..\recv.cpp" lastModified="14c74cb3857"/>
+      <target file="sensors.o" lastModified="14c79695c69">
+         <source file="..\..\..\sensors.cpp" lastModified="14c795c0a9c"/>
       </target>
-      <target file="stm32f0xx_rcc.o" lastModified="14c7589f6b6">
+      <target file="stm32f0xx_rcc.o" lastModified="14c79694933">
          <source file="..\..\..\stm32_lib\src\stm32f0xx_rcc.c" lastModified="14c75869302"/>
       </target>
-      <target file="stm32f0xx_pwr.o" lastModified="14c7589fe52">
+      <target file="stm32f0xx_pwr.o" lastModified="14c79695e16">
          <source file="..\..\..\stm32_lib\src\stm32f0xx_pwr.c" lastModified="14c7586d4fe"/>
       </target>
-      <target file="stm32f0xx_dac.o" lastModified="14c7589fec9">
+      <target file="stm32f0xx_dac.o" lastModified="14c79695f3e">
          <source file="..\..\..\stm32_lib\src\stm32f0xx_dac.c" lastModified="14c7586c994"/>
       </target>
-      <target file="stm32f0xx_misc.o" lastModified="14c7589fe88">
-         <source file="..\..\..\stm32_lib\src\stm32f0xx_misc.c" lastModified="14c7586c9ed"/>
-      </target>
-      <target file="syscalls.o" lastModified="14c7589fb28">
+      <target file="syscalls.o" lastModified="14c796954d7">
          <source file="..\..\..\syscalls\syscalls.c" lastModified="14c7586fe40"/>
       </target>
-      <target file="startup_stm32f0xx.o" lastModified="14c7589f8a8">
-         <source file="..\..\..\cmsis_boot\startup\startup_stm32f0xx.s" lastModified="14c7586950d"/>
+      <target file="stm32f0xx_misc.o" lastModified="14c79695e96">
+         <source file="..\..\..\stm32_lib\src\stm32f0xx_misc.c" lastModified="14c7586c9ed"/>
       </target>
-      <target file="stm32f0xx_usart.o" lastModified="14c7589fb89">
+      <target file="stm32f0xx_usart.o" lastModified="14c7969562c">
          <source file="..\..\..\stm32_lib\src\stm32f0xx_usart.c" lastModified="14c75869811"/>
       </target>
-      <target file="stm32f0xx_i2c.o" lastModified="14c7589f98c">
+      <target file="startup_stm32f0xx.o" lastModified="14c79694d26">
+         <source file="..\..\..\cmsis_boot\startup\startup_stm32f0xx.s" lastModified="14c7586950d"/>
+      </target>
+      <target file="stm32f0xx_i2c.o" lastModified="14c79694ffa">
          <source file="..\..\..\stm32_lib\src\stm32f0xx_i2c.c" lastModified="14c7586c931"/>
       </target>
-      <target file="stm32f0xx_iwdg.o" lastModified="14c7589f736">
+      <target file="stm32f0xx_iwdg.o" lastModified="14c79694a99">
          <source file="..\..\..\stm32_lib\src\stm32f0xx_iwdg.c" lastModified="14c7586a76f"/>
       </target>
-      <target file="main.o" lastModified="14c7589f89b">
-         <source file="..\..\..\main.cpp" lastModified="14c75863ea3"/>
+      <target file="main.o" lastModified="14c7969cfbb">
+         <source file="..\..\..\main.cpp" lastModified="14c7969cbaf"/>
       </target>
    </processor>
 </history>

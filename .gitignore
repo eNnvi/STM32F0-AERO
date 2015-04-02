@@ -42,3 +42,5 @@ Network Trash Folder
 Temporary Items
 .apdisk
 *.coproj
+*.cogui
+STM32F0-AERO.comarker

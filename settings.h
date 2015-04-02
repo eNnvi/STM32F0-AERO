@@ -29,13 +29,13 @@
 
 
 // gyro settings
-#define GYRO_ADD 0xD0
+#define GYRO_ADD 0x68
 #define GYRO_X_SYM
 #define GYRO_Y_SYM
 #define GYRO_Z_SYM
 
 // acc settings
-#define ACC_ADD 0x30
+#define ACC_ADD 0x53
 #define ACC_X_SYM
 #define ACC_Y_SYM
 #define ACC_Z_SYM
@@ -67,5 +67,6 @@
 #define RECV_AUX1 4
 #define RECV_AUX2 5
 #define RECV_AUX3 6
+
 
 #endif // __SETTINGS_H__

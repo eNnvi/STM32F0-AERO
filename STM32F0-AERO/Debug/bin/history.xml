@@ -1,35 +1,35 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <history>
-   <processor signature="4.9.3 -mcpu=cortex-m0 -mthumb -g -nostartfiles -Map=STM32F0-AERO.map -O0 --gc-sections -LD:\CooCox\CoIDE17\configuration\ProgramData\STM32F0-AERO -TD:\CooCox\CoIDE17\configuration\ProgramData\STM32F0-AERO/arm-gcc-link.ld -g">
-      <target file="STM32F0-AERO.elf" lastModified="14c758a00e3">
-         <source file="..\obj\stm32f0xx_crc.o" lastModified="14c7589f65e"/>
-         <source file="..\obj\stm32f0xx_rcc.o" lastModified="14c7589f6b6"/>
-         <source file="..\obj\stm32f0xx_adc.o" lastModified="14c7589f701"/>
-         <source file="..\obj\stm32f0xx_iwdg.o" lastModified="14c7589f736"/>
-         <source file="..\obj\dcm.o" lastModified="14c7589f870"/>
-         <source file="..\obj\main.o" lastModified="14c7589f89b"/>
-         <source file="..\obj\startup_stm32f0xx.o" lastModified="14c7589f8a8"/>
-         <source file="..\obj\stm32f0xx_dma.o" lastModified="14c7589f8e4"/>
-         <source file="..\obj\stm32f0xx_spi.o" lastModified="14c7589f936"/>
-         <source file="..\obj\stm32f0xx_i2c.o" lastModified="14c7589f98c"/>
-         <source file="..\obj\recv.o" lastModified="14c7589f9c7"/>
-         <source file="..\obj\system_stm32f0xx_temp.o" lastModified="14c7589f9fd"/>
-         <source file="..\obj\stm32f0xx_gpio.o" lastModified="14c7589fa3b"/>
-         <source file="..\obj\stm32f0xx_comp.o" lastModified="14c7589fa72"/>
-         <source file="..\obj\stm32f0xx_rtc.o" lastModified="14c7589fae2"/>
-         <source file="..\obj\syscalls.o" lastModified="14c7589fb28"/>
-         <source file="..\obj\stm32f0xx_usart.o" lastModified="14c7589fb89"/>
-         <source file="..\obj\gps.o" lastModified="14c7589fc0c"/>
-         <source file="..\obj\stm32f0xx_tim.o" lastModified="14c7589fcb1"/>
-         <source file="..\obj\stm32f0xx_flash.o" lastModified="14c7589fd07"/>
-         <source file="..\obj\motors.o" lastModified="14c7589fd3b"/>
-         <source file="..\obj\stm32f0xx_exti.o" lastModified="14c7589fd72"/>
-         <source file="..\obj\sensors.o" lastModified="14c7589fda9"/>
-         <source file="..\obj\stm32f0xx_wwdg.o" lastModified="14c7589fddf"/>
-         <source file="..\obj\stm32f0xx_syscfg.o" lastModified="14c7589fe19"/>
-         <source file="..\obj\stm32f0xx_pwr.o" lastModified="14c7589fe52"/>
-         <source file="..\obj\stm32f0xx_misc.o" lastModified="14c7589fe88"/>
-         <source file="..\obj\stm32f0xx_dac.o" lastModified="14c7589fec9"/>
+   <processor signature="4.9.3 -mcpu=cortex-m0 -mthumb -g -Map=STM32F0-AERO.map -Os --gc-sections -lm -lgcc -lc -lstdc++ -LD:\CooCox\CoIDE17\configuration\ProgramData\STM32F0-AERO -TD:\CooCox\CoIDE17\configuration\ProgramData\STM32F0-AERO/arm-gcc-link.ld -g">
+      <target file="STM32F0-AERO.elf" lastModified="14c7969d1ef">
+         <source file="..\obj\stm32f0xx_crc.o" lastModified="14c796947fb"/>
+         <source file="..\obj\stm32f0xx_rcc.o" lastModified="14c79694933"/>
+         <source file="..\obj\stm32f0xx_adc.o" lastModified="14c79694a1e"/>
+         <source file="..\obj\stm32f0xx_iwdg.o" lastModified="14c79694a99"/>
+         <source file="..\obj\dcm.o" lastModified="14c79694c07"/>
+         <source file="..\obj\main.o" lastModified="14c7969cfbb"/>
+         <source file="..\obj\startup_stm32f0xx.o" lastModified="14c79694d26"/>
+         <source file="..\obj\stm32f0xx_dma.o" lastModified="14c79694dc3"/>
+         <source file="..\obj\stm32f0xx_spi.o" lastModified="14c79694ecd"/>
+         <source file="..\obj\stm32f0xx_i2c.o" lastModified="14c79694ffa"/>
+         <source file="..\obj\recv.o" lastModified="14c796950b9"/>
+         <source file="..\obj\system_stm32f0xx_temp.o" lastModified="14c79695147"/>
+         <source file="..\obj\stm32f0xx_gpio.o" lastModified="14c796951fa"/>
+         <source file="..\obj\stm32f0xx_comp.o" lastModified="14c79695287"/>
+         <source file="..\obj\stm32f0xx_rtc.o" lastModified="14c7969544e"/>
+         <source file="..\obj\syscalls.o" lastModified="14c796954d7"/>
+         <source file="..\obj\stm32f0xx_usart.o" lastModified="14c7969562c"/>
+         <source file="..\obj\gps.o" lastModified="14c796956e7"/>
+         <source file="..\obj\stm32f0xx_tim.o" lastModified="14c7969592a"/>
+         <source file="..\obj\stm32f0xx_flash.o" lastModified="14c79695a5c"/>
+         <source file="..\obj\motors.o" lastModified="14c79695afc"/>
+         <source file="..\obj\stm32f0xx_exti.o" lastModified="14c79695b89"/>
+         <source file="..\obj\sensors.o" lastModified="14c79695c69"/>
+         <source file="..\obj\stm32f0xx_wwdg.o" lastModified="14c79695cf2"/>
+         <source file="..\obj\stm32f0xx_syscfg.o" lastModified="14c79695d7c"/>
+         <source file="..\obj\stm32f0xx_pwr.o" lastModified="14c79695e16"/>
+         <source file="..\obj\stm32f0xx_misc.o" lastModified="14c79695e96"/>
+         <source file="..\obj\stm32f0xx_dac.o" lastModified="14c79695f3e"/>
       </target>
    </processor>
 </history>
